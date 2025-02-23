@@ -88,8 +88,7 @@ def main():
     # or by passing the --help flag to this script.
     # We now keep distinct sets of args, for a cleaner separation of concerns.
 
-    # argv_json_file = 'configs/attempt/multi_task_superglue.json'
-    argv_json_file = 'configs/attempt/sinlge_task.json'
+    argv_json_file = 'configs/pct/sinlge_task.json'
     # argv_json_file = 'configs/baselines/prompt_tuning.json'
     print('加载参数文件: ', argv_json_file)
 
