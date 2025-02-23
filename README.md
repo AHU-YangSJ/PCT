@@ -1,4 +1,3 @@
 # PCT
-"Prompt Contrastive Transformation: An Enhanced Strategy for Efficient Prompt Transfer in Natural Language Processing"
-
+The paper "Prompt Contrastive Transformation: An Enhanced Strategy for Efficient Prompt Transfer in Natural Language Processing" has not yet been made public.
 The PCT is being separated from the main project framework, and the experimental code will be gradually uploaded...
