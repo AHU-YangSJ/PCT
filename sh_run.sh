@@ -7,6 +7,6 @@
 #SBATCH -p GPUFEE05
 #SBATCH --constraint=Python
 
-source /gpfs/home/E22201116/anaconda3/bin/activate
-conda activate sapt
+source /anaconda3/bin/activate
+conda activate pct
 srun python run_seq2seq01.py
