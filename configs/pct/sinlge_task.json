@@ -1,0 +1,62 @@
+{
+    "do_train": true,
+    "do_eval": true,
+    "do_test": true,
+    "warmup_steps": 500,
+
+
+    "model_name_or_path": "../../models/t5-base",
+
+
+    "evaluation_strategy": "epoch",
+    "save_strategy" : "epoch",
+
+
+    "save_total_limit": 1,
+    "load_best_model_at_end": true,
+    "metric_for_best_model": "matthews_correlation",
+    "greater_is_better": true,
+
+    "non_linearity": "gelu_new",
+    "overwrite_output_dir": true,
+    "init_prefix_from_vocab": true,
+    "prefix_tuning": true,
+    "split_validation_test": true,
+
+    "prefix_dim": 100,
+    "max_source_length": 256,
+    "learning_rate": 2e-1,
+
+    "per_device_train_batch_size": 20,
+    "per_device_eval_batch_size": 20,
+
+    "output_dir": "zours/full_shot/cola00",
+    "task_name": ["cola"],
+    "eval_dataset_name": ["cola"],
+    "test_dataset_name": ["cola"],
+    "train_file": "../../data/glue/CoLA/train.tsv",
+    "validation_file": "../../data/glue/CoLA/dev.tsv",
+    "test_file": "../../data/glue/CoLA/dev.tsv",
+
+    "num_train_epochs": 40,
+
+    "dataset_config_name": ["en"],
+    "eval_dataset_config_name": ["en"],
+    "test_dataset_config_name": ["en"],
+    "predict_with_generate": true,
+    "pad_to_max_length": true,
+    "prompt_embedding_path": [
+        "source_clear/mnli.pt", "source_clear/qnli.pt",
+        "source_clear/qqp.pt", "source_clear/sst2.pt"
+    ],
+
+    "save_prefix_only": true,
+    "load_prefix_embeddings": true,
+    "attn_prefix_tuning": true,
+    "attn_method": "sub",
+    "prefix_num": 4,
+    "temperature": 2087,
+    "compute_memory": true,
+    "weight_decay": 1e-5
+}
+    
