@@ -1,0 +1,56 @@
+{
+    "do_train": true,
+    "do_eval": true,
+    "do_test": true,
+    "warmup_steps": 4,
+
+
+    "model_name_or_path": "../../models/t5-base",
+
+    "eval_steps": 100,
+    "evaluation_strategy": "steps",
+    "save_steps": 100,
+    "save_strategy" : "steps",
+
+    "save_total_limit": 1,
+    "load_best_model_at_end": true,
+    "metric_for_best_model": "average_metrics",
+    "greater_is_better": true,
+    "non_linearity": "gelu_new",
+    "overwrite_output_dir": true,
+    "init_prefix_from_vocab": true,
+
+    "prefix_dim": 100,
+    "max_source_length": 256,
+    "learning_rate": 0.1,
+
+    "per_device_train_batch_size": 4,
+    "per_device_eval_batch_size": 20,
+    "split_validation_test": true,
+
+    "output_dir": "zours/few_shot_st/rte_psl100[32]",
+    "task_name": ["rte"],
+    "eval_dataset_name": ["rte"],
+    "test_dataset_name": ["rte"],
+    "train_file": "../../data/glue/RTE/train.tsv",
+    "validation_file": "../../data/glue/RTE/dev.tsv",
+    "test_file": "../../data/glue/RTE/dev.tsv",
+
+    "prefix_tuning": true,
+    "save_prefix_only": true,
+
+    "prompt_transfer": 0,
+    "lora_adapter": false,
+
+
+    "num_train_epochs": 200,
+    "dataset_config_name": ["en"],
+    "eval_dataset_config_name": ["en"],
+    "test_dataset_config_name": ["en"],
+    "predict_with_generate": true,
+    "pad_to_max_length": true,
+
+    "weight_decay": 1e-5,
+    "compute_memory": true
+    }
+    
